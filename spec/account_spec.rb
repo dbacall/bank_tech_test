@@ -18,6 +18,10 @@ describe Account do
       account.deposit(100)
       expect(account.withdraw(50)).to eq 50
     end
+
+    it "raises an error if try withdraw more than balance" do
+      expect{ account.withdraw(10) }.to raise_error("You do not have enough in your account to withdraw that much!")
+    end
   end
 
   describe "#print_statement" do
