@@ -2,7 +2,7 @@ class Account
 
   def initialize
     @balance = 0
-  end 
+  end
 
   def deposit(amount)
     @balance += amount
