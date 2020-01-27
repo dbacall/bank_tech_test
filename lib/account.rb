@@ -2,9 +2,9 @@ require "statement"
 
 class Account
 
-  def initialize
+  def initialize(statement=Statement.new)
     @balance = 0
-    @statement = Statement.new
+    @statement = statement
   end
 
   def deposit(amount)

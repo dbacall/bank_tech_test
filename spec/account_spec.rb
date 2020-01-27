@@ -2,7 +2,9 @@ require_relative '../lib/account.rb'
 
 describe Account do
 
-  let(:account) { Account.new }
+  let(:date) { double:"Date", today: Time.now.strftime("%d/%m/%Y") } 
+  let(:statement) { double:"Statement", create_credit: "dummy", create_debit: "dummy" }
+  let(:account) { Account.new(statement) }
   let (:date) { Time.now.strftime("%d/%m/%Y") }
 
   describe "#deposit" do
@@ -20,6 +22,7 @@ describe Account do
 
   describe "#print_statement" do
     it "returns a statement with 1 credit" do
+      allow(statement).to receive(:show) { "date || credit || debit || balance\n#{date} || 100.00 ||  || 100.00" }
       account.deposit(100) 
       expect(account.print_statement).to eq "date || credit || debit || balance\n#{date} || 100.00 ||  || 100.00"
     end

@@ -19,4 +19,5 @@ class Statement
     end
     "date || credit || debit || balance\n" + statement.join("\n")
   end
+  
 end
