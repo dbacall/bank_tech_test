@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 
-describe "print statement of account" do
-  it "shows the account statement" do
-    date = Time.now.strftime("%d/%m/%Y")
+describe 'print statement of account' do
+  it 'shows the account statement' do
+    date = Time.now.strftime('%d/%m/%Y')
     account = Account.new
     account.deposit(100)
     account.withdraw(50)
