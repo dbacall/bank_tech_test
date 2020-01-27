@@ -2,7 +2,8 @@ require_relative "../lib/statement.rb"
 
 describe Statement do
 
-  let(:statement) { Statement.new }
+  let(:date) { double:"Date", :today => Time.now.strftime("%d/%m/%Y") } 
+  let(:statement) { Statement.new(date) }
 
   describe '#create_credit' do
     it "creates a credit with a date and balance in your statement" do
