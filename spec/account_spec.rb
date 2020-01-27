@@ -30,6 +30,13 @@ describe Account do
       account.deposit(100) 
       expect(account.print_statement).to eq "date || credit || debit || balance\n#{date} || 100.00 ||  || 100.00"
     end
+
+    it "returns a statement with 1 credit and 1 debit" do
+      allow(statement).to receive(:show) { "date || credit || debit || balance\n#{date} ||  || 50.00 || 50.00\n#{date} || 100.00 ||  || 100.00" }
+      account.deposit(100)
+      account.withdraw(50) 
+      expect(account.print_statement).to eq "date || credit || debit || balance\n#{date} ||  || 50.00 || 50.00\n#{date} || 100.00 ||  || 100.00"
+    end
   end
 
 end
