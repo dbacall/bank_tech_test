@@ -25,4 +25,5 @@ class Statement
   def add_decimal_places(number)
     '%.2f' % number
   end
+
 end

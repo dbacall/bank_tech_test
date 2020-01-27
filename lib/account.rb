@@ -32,4 +32,5 @@ class Account
   def too_much?(amount)
     @balance - amount < MINIMUM
   end
+  
 end
