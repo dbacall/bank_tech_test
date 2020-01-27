@@ -18,8 +18,8 @@ class Statement
   end
 
   def show
-    statement = @statement.reverse.map do |line|
-      line.join(' || ')
+    statement = @statement.reverse.map do |transaction|
+      transaction.join(' || ')
     end
     "date || credit || debit || balance\n" + statement.join("\n")
   end
