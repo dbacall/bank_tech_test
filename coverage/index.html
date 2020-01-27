@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-27T15:16:28+00:00">2020-01-27T15:16:28+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-27T15:18:51+00:00">2020-01-27T15:18:51+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.53
+         1.54
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>5</b> files in total.
-    <b>72</b> relevant lines. 
-    <span class="green"><b>72</b> lines covered</span> and
+    <b>75</b> relevant lines. 
+    <span class="green"><b>75</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,9 +53,9 @@
       <tr>
         <td class="strong"><a href="#fcd8dded97723fc2f23232108a4147e5e5645956" class="src_link" title="lib/account.rb">lib/account.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>29</td>
-        <td>18</td>
-        <td>18</td>
+        <td>35</td>
+        <td>21</td>
+        <td>21</td>
         <td>0</td>
         <td>1.7</td>
       </tr>
@@ -121,8 +121,8 @@
     <h3>lib/account.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>18</b> relevant lines. 
-      <span class="green"><b>18</b> lines covered</span> and
+      <b>21</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -247,7 +247,7 @@
         <li class="covered" data-hits="2" data-linenumber="20">
           <span class="hits">2</span>
           
-          <code class="ruby">    raise &quot;You do not have enough in your account to withdraw that much!&quot; if @balance - amount &lt; MINIMUM</code>
+          <code class="ruby">    raise &quot;You do not have enough in your account to withdraw that much!&quot; if too_much?(amount)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
@@ -299,6 +299,42 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def too_much?(amount)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="33">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @balance - amount &lt; MINIMUM</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">end</code>

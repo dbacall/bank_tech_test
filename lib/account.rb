@@ -17,7 +17,7 @@ class Account
   end
 
   def withdraw(amount)
-    raise "You do not have enough in your account to withdraw that much!" if @balance - amount < MINIMUM
+    raise "You do not have enough in your account to withdraw that much!" if too_much?(amount)
     @balance -= amount
     @statement.create_debit(amount, @balance)
     @balance
@@ -25,5 +25,11 @@ class Account
 
   def print_statement
     @statement.show
+  end
+
+  private
+
+  def too_much?(amount)
+    @balance - amount < MINIMUM
   end
 end

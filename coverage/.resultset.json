@@ -67,6 +67,12 @@
         1,
         1,
         null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/student/Makers/week10/bank_tech_test/lib/statement.rb": [
@@ -139,6 +145,6 @@
         null
       ]
     },
-    "timestamp": 1580138188
+    "timestamp": 1580138331
   }
 }
