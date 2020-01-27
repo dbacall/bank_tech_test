@@ -105,6 +105,11 @@
         1,
         null,
         null,
+        1,
+        null,
+        1,
+        8,
+        null,
         null
       ],
       "/Users/student/Makers/week10/bank_tech_test/spec/date_spec.rb": [
@@ -152,6 +157,6 @@
         null
       ]
     },
-    "timestamp": 1580138450
+    "timestamp": 1580138885
   }
 }

@@ -6,11 +6,11 @@ class Statement
   end
 
   def create_credit(amount, balance_after)
-    @statement << [ @date.today, '%.2f' % amount, "", '%.2f' % balance_after]
+    @statement << [ @date.today, add_decimal_places(amount), "", add_decimal_places(balance_after)]
   end
 
   def create_debit(amount, balance_after)
-    @statement << [ @date.today, "", '%.2f' % amount, '%.2f' % balance_after]
+    @statement << [ @date.today, "", add_decimal_places(amount), add_decimal_places(balance_after)]
   end
 
   def show
@@ -19,5 +19,10 @@ class Statement
     end
     "date || credit || debit || balance\n" + statement.join("\n")
   end
-  
+
+  private
+
+  def add_decimal_places(number)
+    '%.2f' % number
+  end
 end
