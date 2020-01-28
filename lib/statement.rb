@@ -7,12 +7,12 @@ class Statement
     @date = date
   end
 
-  def create_credit(amount, balance_after_transaction, date=@date.today)
+  def create_credit(amount, balance_after_transaction, date = @date.today)
     @statement << [date, add_decimal_places(amount), '',
                    add_decimal_places(balance_after_transaction)]
   end
 
-  def create_debit(amount, balance_after_transaction, date=@date.today)
+  def create_debit(amount, balance_after_transaction, date = @date.today)
     @statement << [date, '', add_decimal_places(amount),
                    add_decimal_places(balance_after_transaction)]
   end
