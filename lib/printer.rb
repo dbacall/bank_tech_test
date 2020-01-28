@@ -6,6 +6,6 @@ class Printer
     transactions = statement.reverse.map do |transaction|
       transaction.join(' || ')
     end
-    "date || credit || debit || balance\n" + transactions.join("\n")
+    "date || credit || debit || balance  " + transactions.join("  ")
   end
 end

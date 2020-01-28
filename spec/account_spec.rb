@@ -29,24 +29,24 @@ describe Account do
   describe '#print_statement' do
     it 'returns a statement with 1 credit' do
       allow(statement).to receive(:show) {
-        "date || credit || debit || balance\n#{date_today} || 100.00 " \
+        "date || credit || debit || balance  #{date_today} || 100.00 " \
         '||  || 100.00'
       }
       account.deposit(100)
       expect(account.print_statement).to eq('date || credit || debit || ' \
-      "balance\n#{date_today} || 100.00 ||  || 100.00")
+      "balance  #{date_today} || 100.00 ||  || 100.00")
     end
 
     it 'returns a statement with 1 credit and 1 debit' do
       allow(statement).to receive(:show) {
         'date || credit || debit || ' \
-        "balance\n#{date_today} ||  || 50.00 || 50.00\n#{date} " \
+        "balance  #{date_today} ||  || 50.00 || 50.00  #{date} " \
         '|| 100.00 ||  || 100.00'
       }
       account.deposit(100)
       account.withdraw(50)
       expect(account.print_statement).to eq('date || credit || debit || '\
-      "balance\n#{date_today} ||  || 50.00 || 50.00\n#{date} || 100.00 " \
+      "balance  #{date_today} ||  || 50.00 || 50.00  #{date} || 100.00 " \
       '||  || 100.00')
     end
   end
