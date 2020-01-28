@@ -21,18 +21,18 @@ An app to mimick the system of an account in a bank. Features include:
 
 I started out by analysing the specifications and creating a table of classes and associated methods:
 
-Account | Statement | Date
-------- | --------- | ----
-.deposit | .create_credit | .today
-.withdraw | .create_debit |
-.print_statement | .show |
+Account | Statement | Date | Printer
+------- | --------- | ---- | -------
+.deposit | .create_credit | .today | .print
+.withdraw | .create_debit | |
+.print_statement | .show |  |
 
 Using this as a starting point, I then began to create the app using test driven development and the red, green, refactor cycle . I began by creating tests for the most important features first and dealt with edge cases, such as not being  
 able to withdraw more than your balance, last.
 
 ## How I structured my code
 
-My code is split up into three classes; Account, Statement and Date. I chose to split into these three classes in order to cover the user requirements whilst ensuring each class had it's own responsibility. The Account class for the user's interaction with their account, the Statement class for ensuring the correct recording of the statement, and the Day class for figuring out the right date of each transaction. Each class is then made up of methods that each contain the logic to carry out a single responsibility. I've also included some private methods where it was necessary for certain public methods to have access to, but where I did not want the user to be able to access.
+My code is split up into three classes; Account, Statement and Date. I chose to split into these three classes in order to cover the user requirements whilst ensuring each class had it's own responsibility. The Account class for the user's interaction with their account, the Statement class for ensuring the correct recording of the statement, the Day class for figuring out the right date of each transaction and the Printer class for printing statements. Each class is then made up of methods that each contain the logic to carry out a single responsibility. I've also included some private methods where it was necessary for certain public methods to have access to, but where I did not want the user to be able to access.
 
 ## App in use
 
