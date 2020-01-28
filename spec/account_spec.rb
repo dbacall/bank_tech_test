@@ -3,14 +3,15 @@
 require_relative '../lib/account.rb'
 
 describe Account do
-  let(:date) { double :Date, today: Time.now.strftime('%d/%m/%Y') }
   let(:statement) do
     double :Statement,
     create_credit: 'dummy',
     create_debit: 'dummy'
   end
   let(:account) { Account.new(statement) }
-  let(:date) { Time.now.strftime('%d/%m/%Y') }
+  let(:date_today) { "27/01/2020" }
+  let(:date_yesterday) { "26/01/2020" }
+  let(:date) { double :Date, today: date_today }
 
   describe '#deposit' do
     it 'adds 100 to your balance' do
@@ -33,17 +34,17 @@ describe Account do
   describe '#print_statement' do
     it 'returns a statement with 1 credit' do
       allow(statement).to receive(:show) {
-        "date || credit || debit || balance\n#{date} || 100.00 ||  || 100.00"
+        "date || credit || debit || balance\n#{date_today} || 100.00 ||  || 100.00"
       }
       account.deposit(100)
-      expect(account.print_statement).to eq "date || credit || debit || balance\n#{date} || 100.00 ||  || 100.00"
+      expect(account.print_statement).to eq "date || credit || debit || balance\n#{date_today} || 100.00 ||  || 100.00"
     end
 
     it 'returns a statement with 1 credit and 1 debit' do
-      allow(statement).to receive(:show) {"date || credit || debit || balance\n#{date} ||  || 50.00 || 50.00\n#{date} || 100.00 ||  || 100.00"}
+      allow(statement).to receive(:show) {"date || credit || debit || balance\n#{date_today} ||  || 50.00 || 50.00\n#{date} || 100.00 ||  || 100.00"}
       account.deposit(100)
       account.withdraw(50)
-      expect(account.print_statement).to eq "date || credit || debit || balance\n#{date} ||  || 50.00 || 50.00\n#{date} || 100.00 ||  || 100.00"
+      expect(account.print_statement).to eq "date || credit || debit || balance\n#{date_today} ||  || 50.00 || 50.00\n#{date} || 100.00 ||  || 100.00"
     end
   end
 end

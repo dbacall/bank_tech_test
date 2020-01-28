@@ -2,19 +2,19 @@
 
 # Statement class for all methods and functionality involving a statement object
 class Statement
-  def initialize(date = Date.new)
+  def initialize(date = Dates.new)
     @statement = []
     @date = date
   end
 
-  def create_credit(amount, balance_after)
-    @statement << [@date.today, add_decimal_places(amount), '',
-                   add_decimal_places(balance_after)]
+  def create_credit(amount, balance_after_transaction, date=@date.today)
+    @statement << [date, add_decimal_places(amount), '',
+                   add_decimal_places(balance_after_transaction)]
   end
 
-  def create_debit(amount, balance_after)
-    @statement << [@date.today, '', add_decimal_places(amount),
-                   add_decimal_places(balance_after)]
+  def create_debit(amount, balance_after_transaction, date=@date.today)
+    @statement << [date, '', add_decimal_places(amount),
+                   add_decimal_places(balance_after_transaction)]
   end
 
   def show
