@@ -2,9 +2,10 @@
 
 # Statement class for all methods and functionality involving a statement object
 class Statement
-  def initialize(date = Dates.new)
+  def initialize(date = Dates.new, printer = Printer.new)
     @statement = []
     @date = date
+    @printer = printer
   end
 
   def create_credit(amount, balance_after_transaction, date = @date.today)
@@ -18,10 +19,7 @@ class Statement
   end
 
   def show
-    statement = @statement.reverse.map do |transaction|
-      transaction.join(' || ')
-    end
-    "date || credit || debit || balance\n" + statement.join("\n")
+    @printer.print(@statement)
   end
 
   private

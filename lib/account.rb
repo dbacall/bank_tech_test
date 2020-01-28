@@ -2,6 +2,7 @@
 
 require_relative 'statement'
 require_relative 'date'
+require_relative 'printer'
 
 # Account class for all methods and functionality involving an account object
 class Account
