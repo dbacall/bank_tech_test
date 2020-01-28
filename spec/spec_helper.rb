@@ -4,11 +4,7 @@ require 'simplecov'
 SimpleCov.start
 
 def account_spec_helper
-  let(:statement) do
-    double :Statement,
-    create_credit: 'dummy',
-    create_debit: 'dummy'
-  end
+  let(:statement) { double :Statement, create_credit: 'dummy', create_debit: 'dummy' }
   let(:account) { Account.new(statement) }
   let(:date_today) { '27/01/2020' }
   let(:date_yesterday) { '26/01/2020' }

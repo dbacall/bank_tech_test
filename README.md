@@ -43,10 +43,14 @@ My code is split up into three classes; Account, Statement and Date. I chose to 
 Fork this repo and then clone to your local system in your preferred directory.
 Then from the terminal when inside the forked directory, run `bundle install`
 
+## How to run the project
+
+Within the directory, from the terminal run `irb -r "./path/to/account.rb"`
+
 ## How to run tests
 
 Within the directory, from the terminal run `rspec`
 
-## How to run the project
+## How to run linter
 
-Within the directory, from the terminal run `irb -r "./path/to/account.rb"`
+Within the directory, from the terminal run `rubocop`
