@@ -5,7 +5,6 @@ describe 'deposit into account' do
     date = Time.now.strftime('%d/%m/%Y')
     account = Account.new
     account.deposit(100)
-    expect(account.print_statement).to eq('date || credit || debit || balance' \
-    "  #{date} || 100.00 ||  || 100.00")
+    expect { account.print_statement }.to output("date || credit || debit || balance\n#{date} || 100.00 ||  || 100.00\n").to_stdout
   end
 end

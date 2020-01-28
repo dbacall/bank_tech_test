@@ -3,9 +3,9 @@
 # Printer class with responsibilty of printing statements
 class Printer
   def print(statement)
-    transactions = statement.reverse.map do |transaction|
-      transaction.join(' || ')
+    puts 'date || credit || debit || balance'
+    statement.reverse.map do |transaction|
+      puts transaction.join(' || ')
     end
-    'date || credit || debit || balance  ' + transactions.join('  ')
   end
 end

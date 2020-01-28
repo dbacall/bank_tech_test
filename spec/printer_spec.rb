@@ -8,8 +8,7 @@ describe Printer do
   describe '#print' do
     it 'returns a statement with 1 credit' do
       transactions = [['27/01/2020', '100.00', '', '100.00']]
-      expect(printer.print(transactions)).to eq('date || credit || debit || ' \
-      'balance  27/01/2020 || 100.00 ||  || 100.00')
+      expect { printer.print(transactions) }.to output("date || credit || debit || balance\n27/01/2020 || 100.00 ||  || 100.00\n").to_stdout
     end
 
     it 'returns a statement with 1 credit and 1 debit' do
@@ -17,9 +16,7 @@ describe Printer do
         ['27/01/2020', '100.00', '', '100.00'],
         ['27/01/2020', '', '100.00', '0.00']
       ]
-      expect(printer.print(transactions)).to eq('date || credit || debit || '\
-      'balance  27/01/2020 ||  || 100.00 || 0.00  27/01/2020 || 100.00 ' \
-      '||  || 100.00')
+      expect { printer.print(transactions) }.to output("date || credit || debit || balance\n27/01/2020 ||  || 100.00 || 0.00\n27/01/2020 || 100.00 ||  || 100.00\n").to_stdout
     end
   end
 end
